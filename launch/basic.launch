@@ -1,0 +1,14 @@
+<launch>
+	<!--<include file="$(find underwater_vehicle_dynamics)/launch/dynamics.launch">
+	   <arg name="namespace" value="g500" />
+	   <arg name="params" value="$(find underwater_vehicle_dynamics)/config/dynamics_g500.yaml" />
+	</include>-->
+
+	<arg name="scene" default="pipeFollowing_basic.xml" />
+	<arg name="bench" default="pipeFollowing.xml" />
+	<node name="uwsimbenchmarks" pkg="uwsimbenchmarks" type="uwsimbenchmarks" args="--configfile $(arg scene) --benchmark $(arg bench)" output="screen" respawn="false"/>
+
+	<node name="groundTruth_basic" pkg="pipefollowing" type="groundTruth_basic" output="screen" respawn="false" />
+
+</launch>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>pipefollowing</name>
+  <version>0.0.1</version>
+  <description>
+     pipeFollowing package for UWSim examples.
+  </description>
+
+  <author email="perezsolerj@gmail.com">Javier Perez</author>
+  <maintainer email="perezsolerj@gmail.com">Javier Perez</maintainer>
+
+  <license>GPL</license>
+  <url> </url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>std_srvs</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>topic_tools</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+
+  <run_depend>message_runtime</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>topic_tools</run_depend>
+
+</package>
