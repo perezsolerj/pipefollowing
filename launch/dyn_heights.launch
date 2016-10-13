@@ -10,5 +10,11 @@
 	<node name="uwsimbenchmarks" pkg="uwsimbenchmarks" type="uwsimbenchmarks" args="--configfile $(arg scene) --benchmark $(arg bench)" output="screen" respawn="false"/>
 
 	<node name="groundTruth_heights" pkg="pipefollowing" type="groundTruth_heights" output="screen" respawn="false" />
+
+        <arg name="upload" default="" />
+	<param name="upload" value="$(arg upload)" />
+	<param name="scene" value="heights" />
+
+	<node name="SSmanager" pkg="pipefollowing" type="manageSpreadSheet.py" output="screen" respawn="false" />
 </launch>
 

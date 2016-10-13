@@ -11,5 +11,12 @@
 
 	<node name="groundTruth_basic" pkg="pipefollowing" type="groundTruth_basic" output="screen" respawn="false" />
 
+        <arg name="upload" default="" />
+	<param name="upload" value="$(arg upload)" />
+	<param name="scene" value="basic" />
+
+	<node name="SSmanager" pkg="pipefollowing" type="manageSpreadSheet.py" output="screen" respawn="false" />
+	
+
 </launch>
 

@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "nav_msgs/Path.h"
+#include <geometry_msgs/PoseStamped.h>
 
 int main (int argc, char **argv){
 
@@ -7,10 +8,12 @@ int main (int argc, char **argv){
   ros::NodeHandle n;
 
   ros::Publisher path_pub = n.advertise<nav_msgs::Path>("path", 1000);
+  ros::Publisher pose_pub = n.advertise<geometry_msgs::PoseStamped>("position", 1000);
 
   ros::Rate loop_rate(10);
   while (ros::ok()){
     nav_msgs::Path msg;
+    geometry_msgs::PoseStamped poseMsg;
 
     msg.poses.resize(10);	
     msg.poses[0].pose.position.x = -4.96; 
@@ -53,6 +56,11 @@ int main (int argc, char **argv){
     msg.poses[9].pose.position.y = 20.83; 
     msg.poses[9].pose.position.z = 5.9;
 
+    poseMsg.pose.position.x =20.83;
+    poseMsg.pose.position.y =6.53;
+    poseMsg.pose.position.z =-5.9;
+
+    pose_pub.publish(poseMsg);
     path_pub.publish(msg);
 
     ros::spinOnce();
