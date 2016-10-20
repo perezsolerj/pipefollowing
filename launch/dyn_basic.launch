@@ -15,7 +15,7 @@
 	<param name="upload" value="$(arg upload)" />
 	<param name="scene" value="basic" />
 
-	<node name="SSmanager" pkg="pipefollowing" type="manageSpreadSheet.py" output="screen" respawn="false" />
+	<node name="SSmanager" pkg="pipefollowing" type="cloudResults.py" output="screen" respawn="false" />
 	
 
 </launch>
